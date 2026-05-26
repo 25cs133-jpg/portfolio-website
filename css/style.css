@@ -1,0 +1,272 @@
+/* ==========================================
+   REALISTIC PROFESSIONAL PORTFOLIO UI
+   Lavanya T.R - Industry Level Design
+   ========================================== */
+
+:root {
+  --bg1: #070a12;
+  --bg2: #0c1022;
+
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+
+  --text: #eef2ff;
+  --muted: rgba(238, 242, 255, 0.7);
+
+  --primary: #6ea8ff;
+  --secondary: #b58cff;
+  --accent: #5ef0c1;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌌 REALISTIC BACKGROUND (SOFT DEPTH + LIGHT) */
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(110,168,255,0.10), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(181,140,255,0.10), transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(94,240,193,0.08), transparent 50%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+}
+
+/* subtle grain texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* soft floating light */
+body::after {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(110,168,255,0.18), transparent 60%);
+  filter: blur(120px);
+  top: -120px;
+  left: -120px;
+  z-index: -1;
+}
+
+/* ACCESSIBILITY SKIP LINK */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: var(--accent);
+  color: #000;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* HEADER (CLEAN GRADIENT BAR) */
+.site-header {
+  text-align: center;
+  padding: 2.5rem 1rem;
+
+  background: linear-gradient(90deg, rgba(110,168,255,0.15), rgba(181,140,255,0.15));
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header h1 {
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+}
+
+/* NAVIGATION (CLEAN PILLS) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+
+  transition: 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  background: rgba(110,168,255,0.08);
+}
+
+/* SECTIONS */
+.section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 3rem 1.5rem;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.hero p {
+  margin-top: 1rem;
+  color: var(--muted);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* HERO CARD */
+.hero-card {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 1rem 1.4rem;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  backdrop-filter: blur(14px);
+}
+
+/* PROJECT GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* PROJECT CARD (REALISTIC SOFT CARD) */
+.card {
+  padding: 1.4rem;
+  border-radius: 16px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(12px);
+  transition: 0.3s ease;
+
+  position: relative;
+}
+
+/* subtle hover lift */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  border-color: rgba(110,168,255,0.4);
+}
+
+.card h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+/* META TEXT */
+.meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* FORM */
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  padding: 2rem;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  backdrop-filter: blur(14px);
+}
+
+/* INPUTS */
+input, textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+
+  transition: 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(110,168,255,0.3);
+}
+
+/* BUTTON */
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #000;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(110,168,255,0.25);
+}
+
+/* FOOTER */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: rgba(0,0,0,0.2);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 1.7rem;
+  }
+}
